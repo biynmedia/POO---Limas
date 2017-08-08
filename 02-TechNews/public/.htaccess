@@ -14,4 +14,5 @@ RewriteRule ^ - [L]
 
 # Règles de Réecriture
 RewriteRule ^article/([0-9]+)-([^/]+)\.html index.php?controller=news&action=article&idarticle=$1 [QSA,L]
+RewriteRule ^categorie/([^/]+)\.html index.php?controller=news&action=categorie&categorie=$1 [QSA,L]
 RewriteRule ^([^/]+)/([^/]+) index.php?controller=$1&action=$2 [QSA,L]

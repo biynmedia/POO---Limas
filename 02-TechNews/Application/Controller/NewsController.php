@@ -1,17 +1,27 @@
 <?php
 namespace Application\Controller;
 
+use Application\Model\Categorie\CategorieDb;
+
 class NewsController extends \Core\Controller\AppController
 {
     public function index() {
-        $this->render('news/index',["titre"=>"WeBFORCE3","accroche"=>"Partez tous !"]);
+        
+        # Connexion à la BDD
+        #$CategorieDb = new CategorieDb();
+        
+        # Récupération des Catégories
+        #$categories = $CategorieDb->fetchAll();
+        
+        # Affichage dans la Vue
+        $this->render('news/index');
     }
     
     public function categorie() {
-        echo '<h1>JE SUIS LA PAGE CATEGORIE</h1>';
+        $this->render('news/index');
     }
     
     public function article() {
-        echo '<h1>JE SUIS LA PAGE ARTICLE</h1>';
+        $this->render('news/index');
     }
 }

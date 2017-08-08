@@ -1,3 +1,17 @@
+<?php 
+    # Importation des Classes
+    use Application\Model\Categorie\CategorieDb;
+    use Application\Model\Tags\TagsDb;
+    
+    # Récupération des Catégories du Site
+    $CategorieDb = new CategorieDb();
+    $categories  = $CategorieDb->fetchAll();
+    
+    # Récupération des Tags du Site
+    $TagsDb = new TagsDb();
+    $tags   = $TagsDb->fetchAll();
+    
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

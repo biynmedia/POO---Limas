@@ -20,6 +20,12 @@ define('FOOTER_SITE', RACINE_SITE.'/Application/Layout/footer.inc.php');
 # Les Vues
 define('VIEW_SITE', RACINE_SITE.'/Application/Views');
 
+# Connexion BDD
+define('DBHOST',     'localhost');
+define('DBNAME',     'technews-limas');
+define('DBUSERNAME', 'root');
+define('DBPASSWORD', '');
+
 # Autoloader
 require_once 'Autoloader.php';
 Autoloader::register();
