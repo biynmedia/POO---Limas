@@ -1,23 +1,30 @@
 <?php
 namespace Application\Controller;
 
-use Application\Model\Categorie\CategorieDb;
+use Application\Model\Article\ArticleDb;
 
 class NewsController extends \Core\Controller\AppController
 {
     public function index() {
         
         # Connexion à la BDD
-        #$CategorieDb = new CategorieDb();
+        $ArticleDb = new ArticleDb();
         
-        # Récupération des Catégories
-        #$categories = $CategorieDb->fetchAll();
+        # Récupération des Articles
+        $articles   = $ArticleDb->fetchAll();
+        
+        # Récupération des Articles en Spotlight
+        $where      = 'SPOTLIGHTARTICLE = 1';
+        $spotlight  = $ArticleDb->fetchAll($where);
         
         # Affichage dans la Vue
-        $this->render('news/index');
+        $this->render('news/index', [
+            'articles' => $articles, 
+            'spotlight' => $spotlight
+        ]);
     }
     
-    public function categorie() {
+    public function categorie() {            
         $this->render('news/index');
     }
     
@@ -25,3 +32,8 @@ class NewsController extends \Core\Controller\AppController
         $this->render('news/index');
     }
 }
+
+
+
+
+

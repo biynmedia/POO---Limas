@@ -4,7 +4,7 @@
 		<ul>
 			<?php foreach($categories as $categorie) : ?>
 			
-				<li><a href="<?= $categorie->getROUTECATEGORIE(); ?>">
+				<li><a href="<?= PUBLIC_URL.'/'.$categorie->getROUTECATEGORIE(); ?>">
 					<?= $categorie->getLIBELLECATEGORIE(); ?></a></li>
 				
 			<?php endforeach; ?>
@@ -32,7 +32,7 @@
 			<ul class="hidden-sm hidden-xs">
 				<?php foreach($categories as $categorie) : ?>
 			
-				<li><a href="<?= $categorie->getROUTECATEGORIE(); ?>">
+				<li><a href="<?= PUBLIC_URL.'/'.$categorie->getROUTECATEGORIE(); ?>">
 					<?= $categorie->getLIBELLECATEGORIE(); ?></a></li>
 				
 			<?php endforeach; ?>
