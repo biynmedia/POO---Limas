@@ -25,13 +25,25 @@ abstract class DbTable {
      * d'une table dans la BDD.
      * @param $where Condition Where. Ex. IDPRODUIT = 1
      */
-    public function fetchAll($where = '') {
+    public function fetchAll($where = '', $orderby = '', $limit = '', $offset = '') {
         
         $sql = "SELECT * FROM ".$this->_table;
         
         # Si $where n'est pas vide, alors je l'inclus dans ma requète.
         if($where != '') {
             $sql .= ' WHERE '.$where;
+        }
+        
+        if($orderby != '') {
+            $sql .= ' ORDER BY '.$orderby;
+        }
+        
+        if($limit != '') {
+            $sql .= ' LIMIT '. (int) $limit;
+        }
+        
+        if($offset != '') {
+            $sql .= ' OFFSET '. (int) $offset;
         }
         
         $sth = $this->_db->prepare($sql);

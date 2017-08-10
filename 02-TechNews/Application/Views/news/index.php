@@ -27,7 +27,7 @@
     				</div>
     				<div class="spotlight-item-caption">
     					<h2 class="font-heading">
-    						<a href="#">
+    						<a href="<?= $article->generateUrl(); ?>">
     							<?= $article->getTITREARTICLE(); ?>
     						</a>
     					</h2>
@@ -54,12 +54,12 @@
     			<div class="col-md-4 col-sm-4 col-xs-12">
     				<div class="spotlight-item-thumb">
     					<div class="spotlight-item-thumb-img">
-    						<a href="#">
+    						<a href="<?= $article->generateUrl(); ?>">
     							<img alt="<?= $article->getTITREARTICLE(); ?>" src="<?= PUBLIC_URL; ?>/images/product/<?= $article->getFEATUREDIMAGEARTICLE(); ?>" />
     						</a>
     						<a href="#" class="cate-tag"><?= $article->getCategorieObj()->getLIBELLECATEGORIE(); ?></a>
     					</div>
-    					<h3><a href="#"><?= $article->getTITREARTICLE(); ?></a></h3>
+    					<h3><a href="<?= $article->generateUrl(); ?>"><?= $article->getTITREARTICLE(); ?></a></h3>
     					<div class="meta-post">
     						<a href="#">
     							<?= $article->getAuteurObj()->getNOMCOMPLET(); ?>

@@ -2,6 +2,7 @@
     # Importation des Classes
     use Application\Model\Categorie\CategorieDb;
     use Application\Model\Tags\TagsDb;
+    use Application\Model\Article\ArticleDb;
     
     # Récupération des Catégories du Site
     $CategorieDb = new CategorieDb();
@@ -10,6 +11,11 @@
     # Récupération des Tags du Site
     $TagsDb = new TagsDb();
     $tags   = $TagsDb->fetchAll();
+    
+    # Récupération des Informations de la Sidebar
+    $ArticleDb  = new ArticleDb();
+    $sidebar    = $ArticleDb->fetchAll(null,'DATECREATIONARTICLE DESC', 5);
+    $special    = $ArticleDb->fetchAll('SPECIALARTICLE = 1');
     
 ?>
 <!DOCTYPE html>

@@ -1,3 +1,7 @@
+<?php 
+    # Je récupère l'Action
+    $current = ucfirst($this->getAction());
+?>
 <!--menu mobile-->
 <nav class="menu-res hidden-lg hidden-md ">
 	<div class="menu-res-inner">
@@ -32,7 +36,7 @@
 			<ul class="hidden-sm hidden-xs">
 				<?php foreach($categories as $categorie) : ?>
 			
-				<li><a href="<?= PUBLIC_URL.'/'.$categorie->getROUTECATEGORIE(); ?>">
+				<li <?php if($categorie->getLIBELLECATEGORIE() == $current) : echo "class='current'"; endif; ?>> <a href="<?= PUBLIC_URL.'/'.$categorie->getROUTECATEGORIE(); ?>">
 					<?= $categorie->getLIBELLECATEGORIE(); ?></a></li>
 				
 			<?php endforeach; ?>

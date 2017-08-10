@@ -4,8 +4,12 @@ namespace Application\Model\Article;
 
 use Application\Model\Categorie\CategorieDb;
 use Application\Model\Auteur\AuteurDb;
+use Application\Model\Traits\Shortcut;
 
 class Article {
+    
+    # Utilisation du Trait ShortCut, à ne pas confondre avec le use pour le namespace.
+    use Shortcut;
     
     private $IDARTICLE,
             $IDAUTEUR,
@@ -146,9 +150,22 @@ class Article {
         
     }
     
-    
+    public function generateUrl() {
+        
+        # public/article/[:idarticle]-[:slug].html
+        # ou :idarticle = $_GET['idarticle'];
+        return PUBLIC_URL.'/article/'.$this->IDARTICLE.'-'.$this->generateSlug($this->TITREARTICLE).'.html';
+    }
     
 }
+
+
+
+
+
+
+
+
 
 
 
